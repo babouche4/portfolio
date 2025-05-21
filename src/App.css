@@ -1,0 +1,40 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Pour que tout prenne bien la hauteur */
+body, #root {
+  min-height: 100vh;
+}
+
+/* Le dégradé animé rose pastel */
+.animated-background {
+  background: linear-gradient(-45deg, #fff0f6, #fce4ec, #ffe0e0, #fff3f0);
+  background-size: 400% 400%;
+  animation: smoothGradient 20s ease infinite;
+  min-height: 100vh;
+  width: 100%;
+  /* Pour bien forcer */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@keyframes smoothGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* IMPORTANT : Tous les conteneurs ou sections ne doivent PAS avoir de fond blanc */
+section, .container, .list-group-item {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Par précaution */
+body, .App {
+  background: transparent !important;
+}
